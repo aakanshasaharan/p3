@@ -6,14 +6,14 @@
 
 @section('content')
   <h1>Lorem Ipsum Generator</h1>
-  <h3>How many paragraphs do you want?</h3>
+  <h4>How many paragraphs do you want?</h4>
   <form method="POST" actions="/loremipsum">
       <input type="hidden" value="{{ csrf_token() }}" name="_token">
       <fieldset>
         <label for="paragraphs"><h4>Paragraphs (1-50):</h4></label>
         <input type="text" id="paragraphs" name="paragraphs" value={{ $paragraphs or '2' }}>
       </fieldset>
-      <button type="submit" class="btn btn-success">Generate Paragraphs</button><hr>
+      <button type="submit" class="btn btn-success">Generate Paragraphs</button>
   </form>
 
 
@@ -31,6 +31,4 @@
       echo implode('<p>', $text );
     ?>
   @endif
-	<hr>
-  <h4><a href='/'>Back to home page</a></h4>
 	@stop

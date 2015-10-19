@@ -13,7 +13,7 @@
 <p>Create random filler text for your applications.</p>
 <h4><a href='/loremipsum'>Generate some text!</a></h4>
 
-<h2> Random User Generator</h2>
+<h2> Random Users Generator</h2>
 <p>Create random user data for your applications. Like Lorem Ipsum, but for people.</p>
-<h4><a href='/randomuser'>Random User Generator..</a></h4>
+<h4><a href='/randomuser'>Random Users Generator..</a></h4>
 @stop

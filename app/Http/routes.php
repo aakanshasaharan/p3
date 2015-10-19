@@ -22,10 +22,8 @@ Route::get('/loremipsum', 'LoremIpsumController@getLoremipsum');
 Route::post('/loremipsum', 'LoremIpsumController@postLoremipsum');
 
 //route: randomuser generator page
-Route::get('/randomuser', 'LoremIpsumController@getRandomUser');
-Route::post('/randomuser', 'LoremIpsumController@postRandomUser');
-
-
+Route::get('/randomuser', 'randomUserController@getRandomUser');
+Route::post('/randomuser', 'randomUserController@postRandomUser');
 
 //log view shown on local-env, hidden on production-env
 if(App::environment('local')) {

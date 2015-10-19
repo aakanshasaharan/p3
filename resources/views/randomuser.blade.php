@@ -1,19 +1,48 @@
 @extends('layouts.master')
 
 @section('title')
-  Random Users
+  Random User
 @stop
 
 @section('content')
-	<form method="POST" actions="/randomuser">
-		<label for="randomuser"><h4>Random Users (1-5):</h4></label>
-			<input type="hidden" value="{{ csrf_token() }}" name="_token">
-			<fieldset>
-				<input type="text" id="randomuser" name="randomuser" value={{ $randomuser or '2' }}>
-
-				<button type="submit" class="btn btn-success">Random User</button>
-			</fieldset>
-	</form>
+<h1> Random Users</h1>
+  <form method="POST" actions="/randomuser">
+    <input type="hidden" value="{{ csrf_token() }}" name="_token">
+    <fieldset>
+      <label for="number"><h3>Number Of Users (1-50):</h3></label>
+      <input type="text" id="number" name="number" value={{ old('number', '5') }}>
+    </fieldset>
+    <h3>What details would you like to have?</h3>
+    <fieldset>
+      <label for="name">Name:</label>
+      <input type="checkbox" name="options[name]" value="name" {{ old('options.name') ? "checked" : "" }}>
+    </fieldset>
+    <fieldset>
+      <label for="email">Email:</label>
+      <input type="checkbox" name="options[email]" value="email" {{ old('options.email') ? "checked" : "" }}>
+    </fieldset>
+    <fieldset>
+      <label for="username">Username:</label>
+      <input type="checkbox" name="options[username]" value="username" {{ old('options.username') ? 'checked' : '' }}>
+    </fieldset>
+    <fieldset>
+      <label for="company">Company:</label>
+      <input type="checkbox" name="options[company]" value="company" {{ old('options.company') ? 'checked' : '' }}>
+    </fieldset>
+    <fieldset>
+      <label for="address">Address:</label>
+      <input type="checkbox" name="options[address]" value="address" {{ old('options.address') ? 'checked' : '' }}>
+    </fieldset>
+    <fieldset>
+      <label for="phone">Phone Number:</label>
+      <input type="checkbox" name="options[phone]" value="phone" {{ old('options.phone') ? 'checked' : '' }}>
+    </fieldset>
+    <fieldset>
+      <label for="text">Text:</label>
+      <input type="checkbox" name="options[text]" value="text" {{ old('options.text') ? 'checked' : '' }}>
+    </fieldset>
+    <button type="submit" class="btn btn-success">Generate Answer</button>
+  </form>
 
   @if(count($errors) > 0)
     @foreach ($errors->all() as $error)
@@ -22,23 +51,7 @@
   @endif
 
   @if ($_SERVER['REQUEST_METHOD'] == 'POST')
-		<?php
-		// use the factory to create a Faker\Generator instance
-		$faker = Faker\Factory::create('en_US');
-		// array to store all the randonuser
-		$randomuser= array();
-		//for limited no of users
-		$number_of_randomuser = 5;
-		for ($i=0; $i < $number_of_randomuser; $i++) {
-		  $user = array();
-		  $user['Name'] = $faker->name;
-			$user['City'] = $faker->city;
-		  $user['Email'] = $faker->email;
-		  $user['Phone'] = $faker->phoneNumber;
-		  $user['Password'] = $faker->password;
-		  array_push($randomuser, $user);
-		}
-		?>
+    <hr>
     @foreach ($randomuser as $user)
       @foreach ($user as $key=>$value)
         <p>{{ $key }}: {{ $value }}</p>
@@ -47,5 +60,4 @@
     @endforeach
   @endif
 
-  <h4><a href='/'>Back to home page</a></h4>
   @stop

@@ -10,12 +10,6 @@ class LoremIpsumController extends Controller {
     public function __construct() {
         # Put anything here that should happen before any of the other actions
     }
-
-    //Responds to request to GET /indexPage or homePage for app
-    public function getIndex() {
-        return view('index');
-    }
-
     // Responds to request to GET /loremipsum paragraphs page
      public function getLoremIpsum() {
          return view('loremipsum');
@@ -30,13 +24,4 @@ class LoremIpsumController extends Controller {
          $paragraphs = $request->input('paragraphs');
          return view('loremipsum')->with('paragraphs', $paragraphs);
      }
-
-    //Responds to requests to GET /randomuser page
-    public function getRandomUser() {
-          return view('randomuser');
-      }
-    //Responds to requests to POST /randomuser page
-    public function postRandomUser() {
-            return view('randomuser');
-      }
 }
