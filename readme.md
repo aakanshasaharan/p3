@@ -6,7 +6,7 @@ This project is about generating some random text and random users information!
 ####Link: [http://p3.aakanshasaharan.com](http://p3.aakanshasaharan.com)
 
 ###Demo
-URL:(http://www.screencast.com/t/9KJYHXmMW)[http://www.screencast.com/t/9KJYHXmMW]
+URL:[http://www.screencast.com/t/9KJYHXmMW](http://www.screencast.com/t/9KJYHXmMW)
 ###Description:
 This project provides a simple utility for generating Lorem Ipsum Generator and random user informations.
 
