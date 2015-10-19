@@ -41,7 +41,7 @@
       <label for="text">Text:</label>
       <input type="checkbox" name="options[text]" value="text" {{ old('options.text') ? 'checked' : '' }}>
     </fieldset>
-    <button type="submit" class="btn btn-success">Generate Answer</button>
+    <button type="submit" class="btn btn-primary">Generate Answer</button>
   </form>
 
   @if(count($errors) > 0)

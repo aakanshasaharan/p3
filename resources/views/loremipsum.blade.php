@@ -11,9 +11,9 @@
       <input type="hidden" value="{{ csrf_token() }}" name="_token">
       <fieldset>
         <label for="paragraphs"><h4>Paragraphs (1-50):</h4></label>
-        <input type="text" id="paragraphs" name="paragraphs" value={{ $paragraphs or '2' }}>
+        <input type="text" id="paragraphs" name="paragraphs" value={{ $paragraphs or '3' }}>
       </fieldset>
-      <button type="submit" class="btn btn-success">Generate Paragraphs</button>
+      <button type="submit" class="btn btn-primary">Generate Paragraphs</button>
   </form>
 
 

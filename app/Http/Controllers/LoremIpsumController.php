@@ -19,7 +19,7 @@ class LoremIpsumController extends Controller {
     //validation ask for atleast min2 max50 no. of paragraphs
          $this->validate(
              $request,
-             ['paragraphs' => 'integer|min:2|max:50']
+             ['paragraphs' => 'integer|min:1|max:50']
          );
          $paragraphs = $request->input('paragraphs');
          return view('loremipsum')->with('paragraphs', $paragraphs);
